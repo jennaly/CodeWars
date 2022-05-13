@@ -36,7 +36,7 @@ function reverseLetter(str) {
 // manual reverse
 
 function reverseLetter(str) {
-    const filteredString = str.replace(/[^a-z]g/, "")
+    const filteredString = str.replace(/[^a-z]/g, "")
 
     const output = [];
 
@@ -44,18 +44,18 @@ function reverseLetter(str) {
         output.unshift(letter)
     }
 
-    return output
+    return output.join("")
   }
 
 // to use push instead of unshift (constant vs O(n))
 function reverseLetter(str) {
-    const filteredString = str.replace(/[^a-z]g/, "")
+    const filteredString = str.replace(/[^a-z]/g, "")
 
     const output = [];
 
    for (let i = [...filteredString].length - 1; i >= 0; i--) {
-        output.push(letter)
+        output.push(filteredString[i])
     }
 
-    return output
+    return output.join("")
   }
