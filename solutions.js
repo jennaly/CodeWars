@@ -44,3 +44,31 @@ var summation = function (num) {
   }
   return output
 }
+
+// Create a function that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+
+// If no occurrences can be found, a count of 0 should be returned.
+
+function strCount(str, letter){  
+  let hash = {};
+  hash[letter] = 0;
+  for (let i = 0; i < str.length; i++) {
+    if(hash[str.charAt(i)] !== undefined) {
+      hash[letter] += 1;
+    }
+  }
+  return hash[letter]
+}
+
+//param: a string and a letter
+//returns: number that letter appears in string
+//questions: never appears in str? empty str? 
+//ex: 
+//("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+//pseudo
+//set up hash table where key is the letter and the value is 0
+//loop through string test each letter against a condition to see if it's the same letter in the hash table
+//if yes, update the key value and increment it
+//return key value as a number
