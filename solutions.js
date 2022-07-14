@@ -72,3 +72,12 @@ function strCount(str, letter){
 //loop through string test each letter against a condition to see if it's the same letter in the hash table
 //if yes, update the key value and increment it
 //return key value as a number
+
+const lovefunc = (flower1, flower2) => flower1 % 2 == 0  && flower2 % 2 !== 0 || flower2 % 2 == 0  && flower1 % 2 !== 0 ? true : false
+//params: num of petals on flower1, num of petals on flower2
+//returns: boolean value; true if one is odd and the other is even
+//q: inputs are number types? flower with 0 petals? 
+//pseudo:
+//test against conditional, if a petal number is divisible by 2 then it's even, if not it's odd
+//return false when both flowers return the same value 
+
