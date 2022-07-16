@@ -32,3 +32,9 @@ function multipleOfIndex(array) {
     //    return output
          return output
 }
+
+//refactored with arrow function expressions
+
+function multipleOfIndex(array) {
+    return array.filter((num, index) => num % index === 0);
+}
