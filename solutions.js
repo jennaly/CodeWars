@@ -109,3 +109,17 @@ function noSpace(x){
  //questions: empty string? typeof x?
  //pseudo:
  //split str at spaces into elems in an array and join them
+
+
+ function positiveSum(arr) {
+  let newArr = arr.filter(n => n > 0);
+  return newArr.reduce((preV, currV) => preV + currV, 0)
+}
+
+//param: array of numbers
+//returns: sum of all the positive numbers in the array
+//ex: positiveSum([1,2,3,4,5]) => 15; positiveSum([1,-2,3,4,5]) => 13
+//pseudo:
+//filter numbers that are positive into a new array
+//use reduce to get sum of numbers in new array
+//return sum
