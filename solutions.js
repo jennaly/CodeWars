@@ -99,3 +99,13 @@ const isReallyNaN = (val) => {
 //ex: isReallyNaN(1) => false; isReallyNaN("1") => true; isReallyNaN(undefined) => false
 //pseudo:
 //ECMAScript 2015 contains the Number.isNaN() function. Number.isNaN(x) is a reliable way to test whether x is NaN or not. Even with Number.isNaN, however, the meaning of NaN remains the precise numeric meaning and not, "not a number". Alternatively, in the absence of Number.isNaN, the expression (x != x) is a more reliable way to test whether variable x is NaN or not, as the result is not subject to the false positives that make isNaN unreliable.
+
+function noSpace(x){
+  return x.split(' ').join('')
+ }
+ 
+ //param: a string
+ //return: same string but with spaces removed, spaces could be on either ends of the string or in the string
+ //questions: empty string? typeof x?
+ //pseudo:
+ //split str at spaces into elems in an array and join them
