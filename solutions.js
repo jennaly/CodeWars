@@ -81,3 +81,11 @@ const lovefunc = (flower1, flower2) => flower1 % 2 == 0  && flower2 % 2 !== 0 ||
 //test against conditional, if a petal number is divisible by 2 then it's even, if not it's odd
 //return false when both flowers return the same value 
 
+const playerRankUp = points => points >= 100 ? "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up." : false
+
+//params: points
+//returns: well done statement or false value
+//question: will arg be number type? 
+//example: playerRankUp(98) => "false"; playerRankup(101) => "Well done.."
+//pseudo:
+//use conditional to return false for values less than 100, and well done statement for values equal or higher to 101
