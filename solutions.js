@@ -89,3 +89,13 @@ const playerRankUp = points => points >= 100 ? "Well done! You have advanced to 
 //example: playerRankUp(98) => "false"; playerRankup(101) => "Well done.."
 //pseudo:
 //use conditional to return false for values less than 100, and well done statement for values equal or higher to 101
+
+const isReallyNaN = (val) => {
+  return Number.isNaN(val) 
+};
+
+//param: value, could be a number, could not be a number, could be undefined
+//return: true if val is not a number, false if val is a number or is undefined
+//ex: isReallyNaN(1) => false; isReallyNaN("1") => true; isReallyNaN(undefined) => false
+//pseudo:
+//ECMAScript 2015 contains the Number.isNaN() function. Number.isNaN(x) is a reliable way to test whether x is NaN or not. Even with Number.isNaN, however, the meaning of NaN remains the precise numeric meaning and not, "not a number". Alternatively, in the absence of Number.isNaN, the expression (x != x) is a more reliable way to test whether variable x is NaN or not, as the result is not subject to the false positives that make isNaN unreliable.
