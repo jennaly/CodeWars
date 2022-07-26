@@ -123,3 +123,17 @@ function noSpace(x){
 //filter numbers that are positive into a new array
 //use reduce to get sum of numbers in new array
 //return sum
+
+var number=function(array){
+  return array.map(function (str, index) {
+    return (index + 1) + ": " + str
+  })
+}
+  
+//params: an array of strings
+//returns: an array of key-value pairs (data type: string), where the line number is appended to the string
+  //ex: ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
+  //pseudo:
+  //use array.map, apply an anonymous function to each elem in the array
+  //function passes in line and index params and returns line: index
+  //index + 1 because line number starts at 1
