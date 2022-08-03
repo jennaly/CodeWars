@@ -199,3 +199,16 @@ String.prototype.isUpperCase = function() {
   return this == this.toUpperCase() 
 }
 
+//Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+//params: a boolean value
+//returns: Yes if boolean value is true, false if boolean value is false
+//example: boolToWord(true) => "Yes"
+//boolToWord(false) => "No"
+//pseudo: 
+//use ternary operator to see if value is truthy or falsy
+//return yes for truthy, no for falsy
+
+function boolToWord (bool) {
+  return bool ? "Yes" : "No"
+}
