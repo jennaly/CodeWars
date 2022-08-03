@@ -181,3 +181,21 @@ function well (ideas) {
 function even_or_odd(number) {
   return number % 2 == 0 ? "Even" : "Odd"
 }
+
+//Create a method to see whether the string is ALL CAPS.
+////params: a string
+//returns: boolean value - true if all characters is uppercase, false if ANY character is lowercase
+//example: 
+// "c" -> False
+// "C" -> True
+// "hello I AM DONALD" -> False
+// "HELLO I AM DONALD" -> True
+// "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+// "ACSKLDFJSGSKLDFJSKLDFJ" -> True
+//pseudo: 
+// replicate string and use .toUpperCase(); compare said string to original string 
+
+String.prototype.isUpperCase = function() {
+  return this == this.toUpperCase() 
+}
+
