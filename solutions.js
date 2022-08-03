@@ -137,3 +137,35 @@ var number=function(array){
   //use array.map, apply an anonymous function to each elem in the array
   //function passes in line and index params and returns line: index
   //index + 1 because line number starts at 1
+
+
+
+//For every good kata idea there seem to be quite a few bad ones!
+//In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. 
+//If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. 
+//If there are no good ideas, as is often the case, return 'Fail!'.
+
+//params: array of ideas
+//q: multiple elements to array? elements are in string form? empty array? 
+//returns: one OR two good ideas => publish, more than 2 good ideas =>  "I smell a series!", no good ideas => return "fail"
+//example: 
+//['bad', 'bad', 'bad'] => 'Fail!'
+//['good', 'bad', 'bad', 'bad', 'bad'] => 'Publish!'
+//['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good'] => 'I smell a series!'
+//pseudo:
+//filter out all "good" elements from original array
+//conditional: 2 or more => series; up to 2 => publish; empty => fail
+
+
+function well (ideas) {
+  const goodIdeas = ideas.filter(idea => idea == "good");
+//   if (goodIdeas.length == 0) {
+//     return "Fail!"
+//   } else if (goodIdeas.length <= 2) {
+//     return "Publish!"
+//   } else {
+//     return "I smell a series!"
+//   }
+
+  return goodIdeas.length > 2 ? "I smell a series!" : goodIdeas.length > 0 ? "Publish!" : "Fail!"
+}
