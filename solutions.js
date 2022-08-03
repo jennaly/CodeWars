@@ -169,3 +169,15 @@ function well (ideas) {
 
   return goodIdeas.length > 2 ? "I smell a series!" : goodIdeas.length > 0 ? "Publish!" : "Fail!"
 }
+
+//Create a function that takes an
+//integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+//params: number
+//returns: whether the number is even or odd
+//questions: whole number? data type: number? 
+//pseudo:
+//conditional: if number is divisible by 2 => "even", otherwise "odd"
+function even_or_odd(number) {
+  return number % 2 == 0 ? "Even" : "Odd"
+}
