@@ -225,3 +225,32 @@ function derive(coefficient,exponent) {
 //questions: data type of arguments? negative exponents?
 //pseudo: basic math operations, use template literals to string everything together
 
+//2SUM
+
+function twoSum(numbers, target) {
+  const hash = {};
+  for (let i = 0; i < numbers.length; i++) {
+    const curr = numbers[i];
+    const diff = target - curr;
+    
+    if (hash[diff] == undefined) {
+      hash[curr] = i;
+    } else {
+      return [hash[diff], i]
+    }
+  }
+  return []
+}
+
+//params: an array of numbers, a target number that two numbers in the array adds up to
+//returns: indices of the two numbers in the array that adds up to the target number
+//questions: number types? only one solution? same index ok?
+//ex: ([1,2,3],4) =>     [0,2]
+//pseudo: 
+//make a hash map
+//iterate through array
+//for each element in the array, check to see if the addend has already appeared in the map
+//if it has, return the current index and the index of the addend
+//if not, store the addend and its index in the map as addend : index
+
+
