@@ -254,3 +254,6 @@ function twoSum(numbers, target) {
 //if not, store the addend and its index in the map as addend : index
 
 
+function greet(name){
+  return `Hello, ${name} how are you doing today?`
+}
