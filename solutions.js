@@ -257,3 +257,18 @@ function twoSum(numbers, target) {
 function greet(name){
   return `Hello, ${name} how are you doing today?`
 }
+
+
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '')
+}
+
+//params: str
+//returns: str without vowels
+//ex: "hello world" => "hll wrld"
+//qs: case sensitive? empty str? new str or modified str?
+//use regex with flags global and case insensitive 
+//global - match all occurences, case insensitive so that it matches both lower and uppercase occurences
+//wrap pattern in brackets [] to specify that it's a range
+//replace occurences with empty str
+
