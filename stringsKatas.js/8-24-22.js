@@ -54,12 +54,10 @@ function solution(str){
 function stringy(size) {
   let binaryStr = '';
   for (let i = 0; i < size; i++) {
-    if (i % 2 == 0) {
-      binaryStr += "1"
-    } else {
-      binaryStr += "0"
-    }
+     binaryStr % 2 == 0 ? binaryStr += "1" : binaryStr += "0"
   }
   return binaryStr
 }
+
+
 
