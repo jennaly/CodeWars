@@ -272,3 +272,13 @@ function disemvowel(str) {
 //wrap pattern in brackets [] to specify that it's a range
 //replace occurences with empty str
 
+function paperwork(n, m) {
+  return (n < 0 || m < 0) ? 0 : n * m
+}
+
+
+//given number of classmates and number of pages for each classmate's paperwork
+//questions: number types? negative?
+//return number of pages needed (classmates x pages for paperwork)
+//pseudo
+//check if n < 0 or m < 0, if yes return 0, if not return n * m
