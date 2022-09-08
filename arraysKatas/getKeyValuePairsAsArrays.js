@@ -22,3 +22,9 @@ function keysAndValues(data){
   //iterate through data object
   //for each pair, push the key to output array at index 0
   //push the value to output array at index 1
+
+  //another solution
+  //use Object.keys() and Object.values() methods to return arrays of property names and values, respectively
+  function keysAndValues(data){
+    return [Object.keys(data), Object.values(data)]
+  }
