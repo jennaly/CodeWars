@@ -301,3 +301,29 @@ function paperwork(n, m) {
 function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals
 }
+
+// 7 kyu
+// Determine if the poker hand is flush
+// Your function should return true if the hand is a flush, false otherwise.
+// The possible card values are 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
+// Examples
+// ["AS", "3S", "9S", "KS", "4S"]  ==> true
+// ["AD", "4S", "7H", "KS", "10S"] ==> false
+
+//store suit of first card in a variable
+//iterate through every card after
+//for each card, check if the suit at index i is the same as the suit of the first card
+//at any point that the suits don't correspond
+//return false
+//else, return true
+
+function isFlush(cards) {
+  const firstSuit = cards[0].split("")[cards[0].length - 1 ]
+  for (let i = 1; i < cards.length; i++) {
+    let cardSuit = cards[i].split("")[cards[i].length - 1] 
+    if (cardSuit !== firstSuit) {
+      return false
+    } 
+  }
+  return true  
+}
