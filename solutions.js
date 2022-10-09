@@ -327,3 +327,43 @@ function isFlush(cards) {
   }
   return true  
 }
+
+// 7 kyu
+// Multiply Word in String
+// You are to write a function that takes a string as its first parameter. This string will be a string of words.
+
+// You are expected to then use the second parameter, which will be an integer, to find the corresponding word in the given string. The first word would be represented by 0.
+
+// Once you have the located string you are finally going to multiply by it the third provided parameter, which will also be an integer. You are additionally required to add a hyphen in between each word.
+
+// Example
+
+// modifyMultiply ("This is a string",3,5) 
+// Should return
+
+// "string-string-string-string-string"
+
+// Since the 3rd word is 'string'(starting from 0 remember) and the third paramater indicates that it should be repeated 5 times.
+
+// Simple. Good luck.
+
+//given a string, a number for the index, and a number for the rounds of repetition
+//return a string consisting of the value at index x being repeated num times
+//substrings are joined with -
+//questions:
+//loc always be in range between 0 and str.length - 1?
+//loc and num are of number type?
+//return output string as a string?
+//pseudo
+//init a var to store the substrings in an array
+//iterate from 0 to num
+//in each iteration, push the substring to the output var
+//return the output array as a string, using arr.join("-")
+
+function modifyMultiply (str,loc,num) {
+  let output = [];
+  for (let i = 0; i < num; i++) {
+    output.push(str.split(" ")[loc])
+  }
+  return output.join("-")
+} 
