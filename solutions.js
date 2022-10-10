@@ -367,3 +367,72 @@ function modifyMultiply (str,loc,num) {
   }
   return output.join("-")
 } 
+
+// 8 kyu
+// Removing Elements
+
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+// Example:
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+// None of the arrays will be empty, so you don't have to worry about that!
+
+//given an array 
+//return the array with every second element removed
+//return new array or modify original array? => return new array
+//will array every be empty? => no
+
+//initialize new array
+//iterate through elements in the original array
+//if current index is  divisible by 2, push it to new array
+//return new array
+
+//["Keep", "Remove", "Keep", "Remove"] => ["Keep", "Keep"]
+
+function removeEveryOther(arr){
+  //your code here
+  let output = [];
+  arr.map((element, index) => {
+    if (index % 2 == 0) {
+      output.push(element)
+    }
+  })
+  return output
+}
+
+// 8 kyu
+// Beginner - Reduce but Grow
+
+// Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+
+//given an non-empty array of integers
+//return the product of all the values in the array
+//will array ever be empty? => no
+//will every value be a number? => yes
+//return the output? => yes
+//return the output as a number? => yes
+
+//initialize an output variable
+//iterate through the array
+//for each element in the array, update the output variable to be equal to itself multiplied by the element
+//return the output 
+
+function grow(x){
+  let output = 1;
+  for (const num of x) {
+    output *= num
+  }
+  return output
+}
+  
+//another way to do this:
+//use arr.reduce method to return the final product
+
+function grow(x){
+  return x.reduce((previous, current) => previous * current, 1)
+}
+  
