@@ -282,3 +282,88 @@ function paperwork(n, m) {
 //return number of pages needed (classmates x pages for paperwork)
 //pseudo
 //check if n < 0 or m < 0, if yes return 0, if not return n * m
+
+
+// Messi goals function
+
+// Messi is a soccer player with goals in three leagues:
+
+// LaLiga
+// Copa del Rey
+// Champions
+// Complete the function to return his total number of goals in all three leagues.
+
+// Note: the input will always be valid.
+
+// For example:
+
+// 5, 10, 2  -->  17
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals
+}
+
+// 7 kyu
+// Determine if the poker hand is flush
+// Your function should return true if the hand is a flush, false otherwise.
+// The possible card values are 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
+// Examples
+// ["AS", "3S", "9S", "KS", "4S"]  ==> true
+// ["AD", "4S", "7H", "KS", "10S"] ==> false
+
+//store suit of first card in a variable
+//iterate through every card after
+//for each card, check if the suit at index i is the same as the suit of the first card
+//at any point that the suits don't correspond
+//return false
+//else, return true
+
+function isFlush(cards) {
+  const firstSuit = cards[0].split("")[cards[0].length - 1 ]
+  for (let i = 1; i < cards.length; i++) {
+    let cardSuit = cards[i].split("")[cards[i].length - 1] 
+    if (cardSuit !== firstSuit) {
+      return false
+    } 
+  }
+  return true  
+}
+
+// 7 kyu
+// Multiply Word in String
+// You are to write a function that takes a string as its first parameter. This string will be a string of words.
+
+// You are expected to then use the second parameter, which will be an integer, to find the corresponding word in the given string. The first word would be represented by 0.
+
+// Once you have the located string you are finally going to multiply by it the third provided parameter, which will also be an integer. You are additionally required to add a hyphen in between each word.
+
+// Example
+
+// modifyMultiply ("This is a string",3,5) 
+// Should return
+
+// "string-string-string-string-string"
+
+// Since the 3rd word is 'string'(starting from 0 remember) and the third paramater indicates that it should be repeated 5 times.
+
+// Simple. Good luck.
+
+//given a string, a number for the index, and a number for the rounds of repetition
+//return a string consisting of the value at index x being repeated num times
+//substrings are joined with -
+//questions:
+//loc always be in range between 0 and str.length - 1?
+//loc and num are of number type?
+//return output string as a string?
+//pseudo
+//init a var to store the substrings in an array
+//iterate from 0 to num
+//in each iteration, push the substring to the output var
+//return the output array as a string, using arr.join("-")
+
+function modifyMultiply (str,loc,num) {
+  let output = [];
+  for (let i = 0; i < num; i++) {
+    output.push(str.split(" ")[loc])
+  }
+  return output.join("-")
+} 
