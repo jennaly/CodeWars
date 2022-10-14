@@ -475,5 +475,8 @@ function search(budget, prices) {
 //refactored for chaining
 
 function search(budget, prices) {
-  return prices.filter(price => price <= budget).sort((a,b) => a - b).join(',')
+  return prices
+    .filter(price => price <= budget)
+    .sort((a,b) => a - b)
+    .join(',')
 }
