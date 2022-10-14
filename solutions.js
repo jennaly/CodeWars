@@ -435,4 +435,41 @@ function grow(x){
 function grow(x){
   return x.reduce((previous, current) => previous * current, 1)
 }
+
+// 7 kyu
+// Filter Coffee
+
+// You love coffee and want to know what beans you can afford to buy it.
+// The first argument to your search function will be a number which represents your budget.
+// The second argument will be an array of coffee bean prices.
+// Your 'search' function should return the stores that sell coffee within your budget.
+// The search function should return a string of prices for the coffees beans you can afford. The prices in this string are to be sorted in ascending order.
+
+//given a number representing the budget and an array of coffee bean prices
+//return a string of the prices within the budget, sort them in ascending order
+//questions:
+//will the budget ever be negative? => no
+//typeOf budget == number? => yes
+//typeOf elements in prices == number? => yes
+//return in order of least to greatest? => yes
+//return empty string if there is no prices within budget? => yes
+
+//iterate through prices array
+//filter prices that are within the budget, implement a conditional statement as callback
+//prices within budget returned as array
+//.sort, pass in comparison function to sort prices
+//return prices as a string using .join(',')
+
+function search(budget, prices) {
+
+  // return array of prices that are within budget
+  let pricesWithinBudget = prices.filter(price => price <= budget)
   
+  //sort prices in pricesWithinBudget array from least to greatest
+  pricesWithinBudget.sort((a,b) => a - b);
+  
+  //return prices that are within the budget as a string
+  return pricesWithinBudget.join(',')
+}
+
+
