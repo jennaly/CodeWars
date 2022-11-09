@@ -32,4 +32,10 @@ function arrayDiff(a, b) {
     return a.filter(num => !b.includes(num))
   }
   
-  
+
+//for O(1) time complexity
+//Set.has operates at constant time
+
+function arrayDiff(a, b) {
+  return (a.length == 0 || b.length == 0) ? a : a.filter(e => !new Set(b).has(e))
+}  
