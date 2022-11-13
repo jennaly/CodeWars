@@ -45,4 +45,8 @@ function shortcut (string) {
     
     return output.join("")
   }
-  
+
+//regex solution
+function shortCut(string) {
+    return string.replace(/[aeiou]/g, '');
+}
