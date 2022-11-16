@@ -34,3 +34,12 @@ function averageLength(array) {
     return array.map(e => e[0].repeat(avg))
   }
   
+// another way to get the avg is by using reduce
+
+function averageLength(array) { 
+    if (!array.length) return []
+    
+    const avg = Math.round(array.reduce((a,b) => a + b.length, 0) / array.length)
+    
+    return array.map(e => e[0].repeat(avg))
+  }
