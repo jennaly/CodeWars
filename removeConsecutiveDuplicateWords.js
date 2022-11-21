@@ -31,3 +31,5 @@ const removeConsecutiveDuplicates = s => {
 
 const removeConsecutiveDuplicates = s => s.length ? s.toLowerCase().split(" ").filter((word, index) => word !== s.split(" ")[index - 1]).join(" ") : ""
    
+//if algorithm is case sensitive:
+const removeConsecutiveDuplicates = s => s.length ? s.split(" ").filter((word, index) => word !== s.split(" ")[index - 1]).join(" ") : ""
