@@ -107,3 +107,39 @@ function canCreateRansomNote( magazine, ransom) {
 
     return true
 }
+
+// refactored for modularity
+
+function canCreateRansomNote( magazine, ransom) {
+    if (!magazine.length && !ransom.length) {
+        return true
+    } else if (!ransom.length) {
+        return true
+    } else if (!magazine.length) {
+        return false
+    }
+    magazine = magazine.toLowerCase().split(" ");
+    ransom = ransom.toLowerCase().split(" ");
+
+    const magazineHash = createHash(magazine);
+    const ransomHash = createHash(ransom);
+
+    for (const key in ransomHash) {
+       if (magazineHash[key] === undefined || magazineHash[key] < ransomHash[key]) {
+           return false
+       }
+    }
+
+    return true
+}
+
+function createHash(array) {
+    const hash = {};
+
+    for (const word of array) {
+        hash[word] = hash[word] + 1 || 1;
+    }
+
+    return hash
+}
+
