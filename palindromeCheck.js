@@ -27,3 +27,20 @@ exports.isPalindrome = isPalindrome;
 
 // time complexity: O(1/2n) => O(n)
 // space complexity: O(1)
+
+function isPalindrome(string) {
+  // Write your code here.
+  let newStr = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    newStr += string[i];
+  }
+
+  return newStr == string;
+}
+
+// Do not edit the line below.
+exports.isPalindrome = isPalindrome;
+
+// time complexity: O(n^2)
+// space complexity: O(n)
