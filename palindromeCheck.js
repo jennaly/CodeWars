@@ -44,3 +44,19 @@ exports.isPalindrome = isPalindrome;
 
 // time complexity: O(n^2)
 // space complexity: O(n)
+function isPalindrome(string) {
+  // Write your code here.
+  let array = [];
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    array.push(string[i]);
+  }
+
+  return string === array.join("");
+}
+
+// Do not edit the line below.
+exports.isPalindrome = isPalindrome;
+
+// time complexity: O(n) where n is the length of the string
+// space complexity: O(n) where n is the length of the array
