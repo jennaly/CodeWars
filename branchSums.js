@@ -33,4 +33,4 @@ function calculateBranchSums(node, runningSum, sums) {
 // while the current node is not null, add the value of the current node to the runningSum
 // if the right node and the left node are both null, push the runningSum to the sums array (at end of branch)
 // otherwise, run the function again, passing in the left node as the current node
-// same for right node
+// same for right node.
