@@ -35,3 +35,28 @@ function distinct(a) {
 
 // time complexity of O(n) where n is the length of a (input array)
 // space complixity of O(n) because the size of hash map increases with size of input
+
+// if we can't make a new array:
+// use Array.splice() method to remove duplicated value in place
+
+function distinct(a) {
+  if (a === []) return [];
+
+  const nums = {};
+
+  for (let i = 0; i <= a.length; i++) {
+    let num = a[i];
+
+    if (!nums[num]) {
+      nums[num] = "true";
+    } else {
+      a.splice(i, 1);
+      i--;
+    }
+  }
+
+  return a;
+}
+
+// time complexity is still O(n) where n === a.length
+// space complexity is still O(n) where n is the number of unique values in a
