@@ -60,3 +60,16 @@ exports.isPalindrome = isPalindrome;
 
 // time complexity: O(n) where n is the length of the string
 // space complexity: O(n) where n is the length of the array
+
+// recursive solution
+function isPalindrome(string, i = 0) {
+  let j = string.length - 1 - i;
+  return i >= j ? true : string[i] === string[j] && isPalindrome(string, i + 1);
+}
+
+// check if the outermost indexes hold the same value
+// call the function recursively on the next set of indexes (i + 1 and j - 1);
+// function resolves from the center index/indices
+
+// time complexity: O(1/2n) because we're comparing two indices at a time => converge to O(n)
+// space complexity: O(1/2n) because we call the function recursively on every set of indices => converge to O(n)
