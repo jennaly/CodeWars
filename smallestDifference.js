@@ -64,3 +64,41 @@ function smallestDifference(arrayOne, arrayTwo) {
 // output array of length 2 and a few variables
 // this is constant regardless of input size
 // => O(1)
+
+// another variation:
+// given an array of distinct integers
+// return all pairs of elements with the minimum absolute difference
+
+// sort the array
+// traverse through the array
+// at every index, check if the current number and the number next to it has an absolute difference < smallest difference
+// if absolute difference < smallest difference, "overwrite" the value of pairs var and update smallest difference to == absolute difference
+// if absolute difference = smallest difference, push the new pair to the pairs array
+// if absolulte difference > smallest difference, move to next index
+
+var minimumAbsDifference = function (arr) {
+  arr.sort((a, b) => a - b);
+  let smallestDifference = Infinity;
+  let pairs = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    let absoluteDifference = Math.abs(arr[i] - arr[i + 1]);
+
+    if (absoluteDifference < smallestDifference) {
+      smallestDifference = absoluteDifference;
+      pairs = [[arr[i], arr[i + 1]]];
+    } else if (absoluteDifference === smallestDifference) {
+      pairs.push([arr[i], arr[i + 1]]);
+    }
+  }
+
+  return pairs;
+};
+
+// time complexity:
+// sorting the array => O(nlogn)
+// traversing the array => O(n)
+// calculating the absolute difference and comparing it to the smallest difference => O(1)
+// => O(nlogn) where n is the length of the array
+// space complexity:
+// O(1)
