@@ -27,7 +27,7 @@ function threeNumberSum(array, targetSum) {
     // the current number and cannot sum to the target number
     if (array[i] > targetSum) break;
 
-    let left = array[i + 1];
+    let left = i + 1;
     let right = array.length - 1;
 
     while (left < right) {
@@ -65,7 +65,7 @@ function threeSum(array, targetSum) {
 
     if (array[i] === array[i - 1]) continue;
 
-    let left = array[i + 1];
+    let left = i + 1;
     let right = array.length - 1;
 
     while (left < right) {
