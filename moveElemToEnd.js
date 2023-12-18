@@ -33,3 +33,30 @@ function moveElementToEnd(array, toMove) {
 
 // time complexity: O(n) where n is the length of the input array
 // space complexity: O(1)
+
+// another approach is to move all non-toMove numbers to the start
+// of the array
+// and populate the rest of the array with toMove numbers
+// by using a pointer to keep track of the next index to
+// "drop" a non-toMove number in
+
+function moveElemToEnd(array, toMove) {
+  let index = 0;
+
+  for (const num of array) {
+    if (num !== toMove) {
+      array[index] = num;
+      index++;
+    }
+  }
+
+  for (let i = index; i < array.length; i++) {
+    array[i] = toMove;
+  }
+
+  return array;
+}
+
+// this solution retains the relative order of the non-toMove integers
+// time complexity: O(n)
+// space complexity: O(1)
