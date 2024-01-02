@@ -58,3 +58,33 @@ exports.arrayOfProducts = arrayOfProducts;
 
 // time complexity: O(n)
 // space complexity: O(n)
+
+function arrayOfProducts(array) {
+  // Write your code here.
+
+  let result = new Array(array.length);
+
+  // traverse through array from left to right
+  // inserting prefixes to result array
+  let prefix = 1;
+  for (let i = 0; i < array.length; i++) {
+    result[i] = prefix;
+    prefix *= array[i];
+  }
+
+  // traverse through array from right to left
+  // multiply suffixes to existing values in result array
+  let suffix = 1;
+  for (let j = array.length - 1; j >= 0; j--) {
+    result[j] *= suffix;
+    suffix *= array[j];
+  }
+
+  return result;
+}
+
+// Do not edit the line below.
+exports.arrayOfProducts = arrayOfProducts;
+
+// time complexity: O(n);
+// space complexity: O(n) but uses fewer auxillary structures
