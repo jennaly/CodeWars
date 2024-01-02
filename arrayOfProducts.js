@@ -25,3 +25,36 @@ exports.arrayOfProducts = arrayOfProducts;
 
 // time complexity: O(n^2)
 // space complexity: O(n)
+
+function arrayOfProducts(array) {
+  // Write your code here.
+  // create array of prefixes
+  let prefixes = [];
+  let leftProduct = 1;
+  for (let i = 0; i < array.length; i++) {
+    prefixes.push(leftProduct);
+    leftProduct *= array[i];
+  }
+
+  // create array of suffixes
+  let suffixes = new Array(array.length);
+  let rightProduct = 1;
+  for (let j = array.length - 1; j >= 0; j--) {
+    suffixes[j] = rightProduct;
+    rightProduct *= array[j];
+  }
+
+  // create array with product of both arrays
+  let result = [];
+  for (let k = 0; k < array.length; k++) {
+    result.push(prefixes[k] * suffixes[k]);
+  }
+
+  return result;
+}
+
+// Do not edit the line below.
+exports.arrayOfProducts = arrayOfProducts;
+
+// time complexity: O(n)
+// space complexity: O(n)
