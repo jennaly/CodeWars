@@ -30,6 +30,7 @@ function findBestSeat(seats) {
       maximumDistance = currentDistance;
       bestSeat = Math.floor((right + left) / 2);
     }
+    left = right;
   }
 
   return bestSeat;
